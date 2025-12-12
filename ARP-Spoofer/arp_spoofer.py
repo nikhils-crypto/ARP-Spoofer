@@ -5,17 +5,17 @@ from optparse import OptionParser
 
 def get_arguments():
     parser = OptionParser()
-    parser.add_option("-i" , "--rt" , dest="IP1" , help="Enter the ip address of router")
-    parser.add_option("-w" , "--win" , dest="IP2" , help="Enter the ip address of windows")
-    parser.add_option("-m" , "--ms" , dest="IP3" , help="Enter the ip address of Metasploit")
+    parser.add_option("-i" , "--rt" , dest="IP1" , help="Enter the ip address of machine1")
+    parser.add_option("-w" , "--win" , dest="IP2" , help="Enter the ip address of machine2")
+    parser.add_option("-m" , "--ms" , dest="IP3" , help="Enter the ip address of machine3")
 
     (options , args) = parser.parse_args()
     if not options.IP1:
-        parser.error("Please specify the IP address of router to scan the network")
+        parser.error("Please specify the IP address of machine1 to scan the network")
     elif not options.IP2:
-        parser.error("Please specify the IP address of windows to scan the network")
+        parser.error("Please specify the IP address of machine2 to scan the network")
     elif not options.IP3:
-        parser.error("Please specify the IP address of Metasploit to scan the network")
+        parser.error("Please specify the IP address of machine3 to scan the network")
     else:
         return options
 
